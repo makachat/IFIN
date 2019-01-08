@@ -1,0 +1,11 @@
+{% extends 'layouts/base.html' %}
+{% block title %}Post - IFin{% endblock %}
+{% block content %}
+
+<article>
+    Post #-{{post.id}}
+    <p>{{post.title}}</p>
+    <p>{{post.body}}</p>
+</article>
+
+{% endblock %}

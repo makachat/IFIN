@@ -1,0 +1,20 @@
+{% extends 'layouts/base.html' %}
+{% block title %}Blog - IFin{% endblock %}
+{% block content %}
+
+<h1>
+    Hello Reda welcome to the BLOG
+    </br>
+    il y a {{posts|length}} Posts
+</h1>
+</br>
+{% for post in posts %}
+    <article>
+        <h2><a href="/blog/posts/{{post.id}}">#{{post.id}}-{{post.title|upper}}</a></h2>
+        {{post.body|truncatewords:3}}
+        <p><a href="/blog/posts/{{post.id}}">Lire la suite</a> </p>
+    </article>
+
+{% endfor %}
+
+{% endblock %}

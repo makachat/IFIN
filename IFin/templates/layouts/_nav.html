@@ -1,0 +1,25 @@
+
+<nav class="navbar">
+    <div class="wrapper">
+          <a href="/" class="navbar-brand">IFIN</a>
+        <ul class="navbar-right">
+            <li><a href="/">Home</a> </li>
+            <li><a href="/IFApp/">IFApp</a> </li>
+            <li><a href="/IFApp/showglaccount">IFApp GLAccount</a> </li>
+            <li><a href="/IFApp/supplier">Supplier</a> </li>
+            <li><a href="/IFApp/contract">Contract</a> </li>
+            <li><a href="/blog/">Blog</a> </li>
+            <li><a href="/contact">Contact</a> </li>
+            {% if user.is_authenticated %}
+             <li><a href="javascript:{document.getElementById('logout').submit()}">Logout </a> </li>
+            <p style="color:#7690ac">Welcome {{ user.get_full_name }}</p>
+            <form id="logout" method="POST" action="/accounts/logout">
+                {% csrf_token %}
+                <input type="hidden" />
+            </form>
+            {% else %}
+             <li><a href="/accounts/login">Login</a> </li>
+            {% endif %}
+         </ul>
+     </div>
+  </nav>

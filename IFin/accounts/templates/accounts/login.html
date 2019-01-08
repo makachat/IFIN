@@ -1,0 +1,33 @@
+{% extends 'layouts/base.html' %}
+{% block title %}IFAP - Login Page{% endblock %}
+{% block content %}
+
+<h1>
+    Hello Reda welcome to the login Page
+</h1>
+
+{% if error %}
+<p style="color:#FF0000" >{{ error }} </p>
+
+<br />
+<br />
+{% endif %}
+
+<form method="POST" action="{% url 'login' %}">
+    {% csrf_token %}
+
+    Username:
+    <br/>
+    <input type="text" name="username" />
+    <br/>
+    Password:
+     <br />
+    <input type="password" name="password" />
+    <br />
+    <br/>
+    <input type="submit" value="login" />
+
+</form>
+
+{% endblock %}
+
