@@ -76,6 +76,7 @@ WSGI_APPLICATION = 'IFin.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
+# or driver SQL Server Native Client 11.0
 
 DATABASES = {
     'default': {
@@ -86,7 +87,7 @@ DATABASES = {
         'PASSWORD': 'MQ3M/nB7HU78Vivn*zy914w',
         'PORT': '',
         'OPTIONS': {
-            'driver': 'SQL Server Native Client 11.0',
+            'driver': 'ODBC Driver 17 for SQL Server',
         },
     }
 }
