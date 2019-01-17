@@ -7,5 +7,6 @@ urlpatterns = [
     path('supplier', views.supplier, name='supplier'),
     path('contract', views.contract, name='contract'),
     path('glaccount', views.glaccount, name='glaccount'),
+    path('form', views.form, name='form'),
 ]
 

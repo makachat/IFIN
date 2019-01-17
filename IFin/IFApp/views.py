@@ -13,6 +13,11 @@ def index(request):
     print(fulltext)
     return render(request, 'IFApp/index.html', {'fulltext': fulltext})
 
+
+def form(request):
+    return render(request, 'IFApp/form.html')
+
+
 @login_required
 def glaccount(request):
     table = GlAccountTable(Glaccount.objects.all())
