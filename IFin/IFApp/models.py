@@ -29,7 +29,7 @@ class Glaccount(TimespamtedModel):
 
 class Site(TimespamtedModel):
     country = (
-        ('CA','CANADA'),
+        ('CA', 'CANADA'),
         ('US', 'USA')
     )
     category = (
@@ -71,13 +71,13 @@ class Contract(TimespamtedModel):
     description = models.TextField()
     reference = models.TextField()
     startDate = models.DateField()
-    endDate = models.DateField(null=True)
-    renewalDate = models.DateField(null=True)
+    endDate = models.DateField(null=True, blank=True)
+    renewalDate = models.DateField(null=True , blank=True)
     monthlyCost = models.DecimalField(max_digits=12, decimal_places=2)
     currency = models.CharField(max_length=10, choices=currencyChoice)
-    noticePeriod = models.DecimalField(max_digits=10, decimal_places=0, null=True)
-    comment = models.TextField(null=True)
-    siteAffectation = models.ForeignKey(Site, on_delete=models.PROTECT, null=True)
+    noticePeriod = models.DecimalField(max_digits=10, decimal_places=0, null=True, blank=True)
+    comment = models.TextField(null=True, blank=True)
+    siteAffectation = models.ForeignKey(Site, on_delete=models.PROTECT, null=True, blank=True)
 
     def __str__(self):
         return 'Contract : {} - {} : '.format(self.supplier, self.reference, self.description)

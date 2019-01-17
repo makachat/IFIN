@@ -6,6 +6,6 @@ urlpatterns = [
     path('', views.index, name='index'),
     path('supplier', views.supplier, name='supplier'),
     path('contract', views.contract, name='contract'),
-    path('showglaccount', views.showglaccount),
+    path('glaccount', views.glaccount, name='glaccount'),
 ]
 
