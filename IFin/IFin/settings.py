@@ -79,9 +79,9 @@ WSGI_APPLICATION = 'IFin.wsgi.application'
 
 DATABASES = {
     'default': {
-        'NAME': 'IFin_dev',
+        'NAME': 'IFin',
         'ENGINE': 'sql_server.pyodbc',
-        'HOST': 'SJNUT01SQL2016D',
+        'HOST': 'SJNUT01SQL2016',
         'USER': 'ifin_admin',
         'PASSWORD': 'MQ3M/nB7HU78Vivn*zy914w',
         'PORT': '',
