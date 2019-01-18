@@ -29,4 +29,6 @@ RUN echo 'we are running some # of cool things'
 CMD python3 manage.py runserver 0.0.0.0:8000
 
 # to create the docker image for the prod :  docker build -f dockerfile -t ifin .
+# to launch the prod  docker run -d --name ifinsrv01 --network my_app_net ifin
+
 
