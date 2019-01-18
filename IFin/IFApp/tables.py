@@ -2,7 +2,7 @@ from django_filters.views import FilterView
 from django_tables2.views import SingleTableMixin
 import django_tables2 as tables
 
-from .models import Supplier, Contract, Glaccount
+from .models import Supplier, Contract, Glaccount, Site
 
 
 class SupplierTable(tables.Table):
@@ -21,5 +21,11 @@ class ContractTable(tables.Table):
 class GlAccountTable(tables.Table):
     class Meta:
         model = Glaccount
+        template_name = 'django_tables2/bootstrap.html'
+
+
+class SiteTable(tables.Table):
+    class Meta:
+        model = Site
         template_name = 'django_tables2/bootstrap.html'
 

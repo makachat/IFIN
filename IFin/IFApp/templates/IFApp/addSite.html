@@ -1,0 +1,41 @@
+{% extends 'layouts/base.html' %}
+{% load render_table from django_tables2 %}
+
+{% block title %}IFApp - IFin{% endblock %}
+{% block content %}
+
+
+<form method='POST' action="{% url 'addsite' %}">
+     {% csrf_token %}
+    </br>
+    Name :
+    </br>
+       <input type="text" name="site">
+    </br>
+    Country :
+    </br>
+
+    <select name="country">
+            <option value="CA">CANADA</option>
+            <option value="US">USA</option>
+    </select>
+    </br>
+    Category :
+    </br>
+       <select name="category">
+            <option value="Plant">Plant</option>
+            <option value="DataCenter">Data Center</option>
+            <option value="DistributionCenter">Distribution Center</option>
+            <option value="Yard">Yard</option>
+            <option value="HeadOffice">Head Office</option>
+
+    </select>
+    </br>
+     Address :
+    </br>
+       <input type="text" name="address">
+    </br>
+        <input type="submit" value="Save"/>
+</Form>
+
+{% endblock %}
