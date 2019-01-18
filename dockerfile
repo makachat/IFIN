@@ -28,4 +28,5 @@ RUN echo 'we are running some # of cool things'
 # command to be run when container is started 
 CMD python3 manage.py runserver 0.0.0.0:8000
 
-# to create the docker image : docker build -f django-ubuntu.dockerfile -t mydjangoubuntu .
+# to create the docker image for the prod :  docker build -f dockerfile -t ifin .
+
