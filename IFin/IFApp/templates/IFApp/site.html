@@ -9,7 +9,49 @@
     List Of Site
     </h1>
 </div>
+<script>
+    $(document).ready(function() {
+    $('#example').DataTable();
+} );
+</script>
 
- {% render_table table %}
+<h1>
+    View Site
+</h1>
+
+<table id="example" class="display" style="width:100%">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Site</th>
+                <th>Category</th>
+                <th>Address</th>
+                <th>Country</th>
+
+            </tr>
+        </thead>
+        <tbody>
+
+            {% for i in siteList %}
+            <tr>
+              <td width="5"> <a href="{% url 'addsite' %}">{{i.id}}</a> </td>
+              <td width="100">{{i.site}}</td>
+              <td width="100">{{i.category}}</td>
+              <td width="100">{{i.address}}</td>
+              <td width="40">{{i.country}}</td>
+            </tr>
+            {% endfor %}
+
+        </tbody>
+        <tfoot>
+            <tr>
+                <th>ID</th>
+                <th>Site</th>
+                <th>Category</th>
+                <th>Address</th>
+                <th>Country</th>
+            </tr>
+        </tfoot>
+    </table>
 
 {% endblock %}

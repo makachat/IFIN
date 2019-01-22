@@ -1,0 +1,40 @@
+{% extends 'layouts/base.html' %}
+{% block title %}IFApp - IFin{% endblock %}
+{% block content %}
+
+<script>
+    $(document).ready(function() {
+    $('#example').DataTable();
+} );
+</script>
+
+<h1>
+    View GL Account
+</h1>
+
+<table id="example" class="display" style="width:100%">
+        <thead>
+            <tr>
+                <th>Account number</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            {% for i in glaccountlist %}
+            <tr>
+              <td width="50">{{i.glaccount}}</td>
+              <td>{{i.description}}</td>
+            </tr>
+            {% endfor %}
+
+        </tbody>
+        <tfoot>
+            <tr>
+                <th>Account number</th>
+                <th>Description</th>
+            </tr>
+        </tfoot>
+    </table>
+
+{% endblock %}

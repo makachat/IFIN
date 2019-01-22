@@ -27,6 +27,12 @@ def glaccount(request):
 
 
 @login_required
+def viewglaccount(request):
+    glaccountlist = Glaccount.objects.all()
+    return render(request, 'IFApp/viewglaccount.html', {'glaccountlist': glaccountlist})
+
+
+@login_required
 def contract(request):
     table = ContractTable(Contract.objects.all())
     RequestConfig(request).configure(table)
@@ -42,9 +48,8 @@ def supplier(request):
 
 @login_required
 def site(request):
-    table = SiteTable(Site.objects.all())
-    RequestConfig(request).configure(table)
-    return render(request, 'IFApp/site.html', {'table': table})
+    siteList = Site.objects.all()
+    return render(request, 'IFApp/site.html', {'siteList': siteList})
 
 
 @login_required
