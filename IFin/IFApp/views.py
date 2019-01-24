@@ -34,9 +34,8 @@ def viewglaccount(request):
 
 @login_required
 def contract(request):
-    table = ContractTable(Contract.objects.all())
-    RequestConfig(request).configure(table)
-    return render(request, 'IFApp/contract.html', {'table': table})
+    contratList = Contract.objects.all()
+    return render(request, 'IFApp/contract.html', {'contratList': contratList})
 
 
 @login_required
@@ -71,3 +70,9 @@ def addsite(request):
             return render(request, 'IFApp/addsite.html')
     else:
           return render(request, 'IFApp/addsite.html')
+
+
+@login_required
+def testsite(request, i):
+    return render(request, 'IFApp/testsite.html', {'i': i})
+

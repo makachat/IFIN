@@ -4,22 +4,76 @@
 {% block content %}
 
 
-<h1>
-    List Of contract
 
+<div align="center">
+    <h1>
+    List Of Contract
+    </h1>
+</div>
+<script>
+    $(document).ready(function() {
+    $('#example').DataTable();
+} );
+</script>
+
+<h1>
+    View Site
 </h1>
 
-   {% render_table table %}
+<table id="example" class="display" style="width:100%">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>entity</th>
+                <th>supplier</th>
+                <th>glaccount</th>
+                <th>typeOfExpense</th>
+                <th>description</th>
+                <th>reference</th>
+                <th>startDate</th>
+                <th>endDate</th>
+                <th>renewalDate</th>
+                <th>monthlycost</th>
+                <th>currency</th>
+                <th>noticePeriod</th>
+                <th>siteAffectation</th>
 
+            </tr>
+        </thead>
+        <tbody>
 
+            {% for i in contratList %}
+            <tr>
+              <td width="5"> {{i.id}} </td>
+              <td width="100">{{i.entity}}</td>
+              <td width="100">{{i.supplier.name}}</td>
+              <td width="100">{{i.glaccount.description}}</td>
+              <td width="10">{{i.typeOfExpense}}</td>
+              <td width="100">{{i.description}}</td>
+              <td width="100">{{i.reference}}</td>
+              <td width="20">{{i.startDate}}</td>
+              <td width="20">{{i.endDate}}</td>
+              <td width="20">{{i.renewalDate}}</td>
+              <td width="10">{{i.monthlycost}}</td>
+              <td width="10">{{i.currency}}</td>
+              <td width="10">{{i.noticePeriod}}</td>
+              <td width="10">{{i.siteAffectation.site}}</td>
 
-<!--{% for supplier in supplier_list %}-->
-    <!--<article>-->
-        <!--{{supplier.name|upper}}-->
-            <!--{{supplier.description}}-->
-    <!--</article>-->
+            </tr>
+            {% endfor %}
 
-<!--{% endfor %}-->
+        </tbody>
+        <tfoot>
+            <tr>
+                <th>ID</th>
+                <th>Site</th>
+                <th>Category</th>
+                <th>Address</th>
+                <th>Country</th>
+            </tr>
+        </tfoot>
+    </table>
+
 
 
 {% endblock %}

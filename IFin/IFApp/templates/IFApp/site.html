@@ -34,7 +34,7 @@
 
             {% for i in siteList %}
             <tr>
-              <td width="5"> <a href="{% url 'addsite' %}">{{i.id}}</a> </td>
+              <td width="5"> <a href="{% url 'testsite' i.id %}">{{i.id}}</a> </td>
               <td width="100">{{i.site}}</td>
               <td width="100">{{i.category}}</td>
               <td width="100">{{i.address}}</td>

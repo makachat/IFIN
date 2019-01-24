@@ -10,6 +10,7 @@ urlpatterns = [
     path('viewglaccount', views.viewglaccount, name='viewglaccount'),
     path('site', views.site, name='site'),
     path('addsite', views.addsite, name='addsite'),
+    path('testsite/<i>', views.testsite, name='testsite'),
     path('form', views.form, name='form'),
 ]
 
