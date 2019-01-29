@@ -7,7 +7,6 @@ urlpatterns = [
     path('supplier', views.supplier, name='supplier'),
     path('contract', views.contract, name='contract'),
     path('glaccount', views.glaccount, name='glaccount'),
-    path('viewglaccount', views.viewglaccount, name='viewglaccount'),
     path('site', views.site, name='site'),
     path('addsite', views.addsite, name='addsite'),
     path('testsite/<i>', views.testsite, name='testsite'),

@@ -5,18 +5,19 @@
         <ul class="navbar-right">
             <li><a href="/">Home</a> </li>
 
-            <li><a href="/contact">Contact</a> </li>
+
             {% if user.is_authenticated %}
-            <li><a href="/IFApp/">IFApp</a> </li>
+            <!-- <li><a href="/IFApp/">IFApp</a> </li>
             <li><a href="/IFApp/form">IFApp Form</a> </li>
+             <li><a href="/contact">Contact</a> </li>
+             <li><a href="/blog/">Blog</a> </li>
+               <li><a href="/IFApp/testsite">test Site</a> </li>
+            -->
+            <li><a href="/IFApp/contract">Contract</a> </li>
             <li><a href="/IFApp/site">Site</a> </li>
             <li><a href="/IFApp/addsite">Add Site</a> </li>
-            <li><a href="/IFApp/testsite">test Site</a> </li>
             <li><a href="/IFApp/glaccount">Gl Account</a> </li>
-            <li><a href="/IFApp/viewglaccount">View Gl Account</a> </li>
             <li><a href="/IFApp/supplier">Supplier</a> </li>
-            <li><a href="/IFApp/contract">Contract</a> </li>
-            <li><a href="/blog/">Blog</a> </li>
              <li><a href="javascript:{document.getElementById('logout').submit()}">Logout </a> </li>
             <p style="color:#7690ac">Welcome {{ user.get_full_name }}</p>
             <form id="logout" method="POST" action="/accounts/logout">
@@ -26,6 +27,7 @@
             {% else %}
              <li><a href="/accounts/login">Login</a> </li>
             {% endif %}
+
          </ul>
      </div>
   </nav>
