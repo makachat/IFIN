@@ -5,6 +5,7 @@ from . models import Supplier, Contract, Glaccount, Site
 from .tables import SupplierTable, ContractTable, GlAccountTable, SiteTable
 from django_tables2 import RequestConfig
 from django.utils import timezone
+from . import forms
 
 # Create your views here.
 
@@ -34,6 +35,12 @@ def contract(request):
 def supplier(request):
     supplierList = Supplier.objects.all()
     return render(request, 'IFApp/supplier.html', {'supplierList': supplierList})
+
+
+@login_required
+def formSupplier(request):
+    form = forms.FormSupplier()
+    return render(request, 'IFApp/formsupplier.html', {'form': form})
 
 
 @login_required
