@@ -5,7 +5,7 @@ from . models import Supplier, Contract, Glaccount, Site
 from .tables import SupplierTable, ContractTable, GlAccountTable, SiteTable
 from django_tables2 import RequestConfig
 from django.utils import timezone
-from .forms import FormSupplier, FormSite
+from .forms import FormSupplier, FormSite, FormContract
 
 # Create your views here.
 
@@ -29,6 +29,19 @@ def glaccount(request):
 def contract(request):
     contratList = Contract.objects.all()
     return render(request, 'IFApp/contract.html', {'contratList': contratList})
+
+
+@login_required
+def formContract(request):
+    form = FormContract()
+    if request.method == "POST":
+        form = FormContract(request.POST)
+        if form.is_valid():
+            form.save(commit=True)
+            return redirect('contract')
+        else:
+            print('ERROR FORM INVALID')
+    return render(request, 'IFApp/formcontract.html', {'form': form})
 
 
 @login_required
