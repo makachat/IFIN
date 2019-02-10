@@ -9,6 +9,7 @@ urlpatterns = [
     path('contract', views.contract, name='contract'),
     path('glaccount', views.glaccount, name='glaccount'),
     path('site', views.site, name='site'),
+    path('formsite', views.formSite, name='formsite'),
     path('addsite', views.addsite, name='addsite'),
     path('testsite/<i>', views.testsite, name='testsite'),
 

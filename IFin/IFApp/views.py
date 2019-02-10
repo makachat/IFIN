@@ -5,7 +5,7 @@ from . models import Supplier, Contract, Glaccount, Site
 from .tables import SupplierTable, ContractTable, GlAccountTable, SiteTable
 from django_tables2 import RequestConfig
 from django.utils import timezone
-from . import forms
+from .forms import FormSupplier, FormSite
 
 # Create your views here.
 
@@ -38,8 +38,15 @@ def supplier(request):
 
 
 @login_required
-def formSupplier(request):
-    form = forms.FormSupplier()
+def formSupplier (request):
+    form = FormSupplier()
+    if request.method == "POST":
+        form = FormSupplier(request.POST)
+        if form.is_valid():
+            form.save(commit=True)
+            return redirect('supplier')
+        else:
+            print('ERROR FORM INVALID')
     return render(request, 'IFApp/formsupplier.html', {'form': form})
 
 
@@ -48,6 +55,18 @@ def site(request):
     siteList = Site.objects.all()
     return render(request, 'IFApp/site.html', {'siteList': siteList})
 
+
+@login_required
+def formSite(request):
+    form = FormSite()
+    if request.method == "POST":
+        form = FormSite(request.POST)
+        if form.is_valid():
+            form.save(commit=True)
+            return redirect('site')
+        else:
+            print('ERROR FORM INVALID')
+    return render(request, 'IFApp/formsite.html', {'form': form})
 
 @login_required
 def addsite(request):

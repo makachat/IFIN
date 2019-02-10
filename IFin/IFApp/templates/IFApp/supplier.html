@@ -4,22 +4,18 @@
 {% block content %}
 
 
-
 <div align="center">
     <h1>
     List Of Supplier
     </h1>
+      <input type="submit" class='btn btn-primary' value="ADD SUPPLIER" onclick="window.location='/IFApp/formsupplier';" />
+
 </div>
 <script>
     $(document).ready(function() {
     $('#example').DataTable();
 } );
 </script>
-
-<h1>
-    View supplier
-</h1>
-
 <table id="example" class="display" style="width:100%">
         <thead>
             <tr>

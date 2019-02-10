@@ -17,7 +17,7 @@ class Supplier(TimespamtedModel):
     description = models.TextField(null=True)
 
     def __str__(self):
-        return 'Supplier : {} - {}'.format(self.name, self.description)
+        return '{} - {}'.format(self.name, self.description)
 
 
 class Glaccount(TimespamtedModel):
@@ -42,12 +42,12 @@ class Site(TimespamtedModel):
     )
 
     site = models.CharField(max_length=100)
-    country = models.CharField(max_length=10, choices=country, blank=True, null=True)
     category = models.CharField(max_length=50, choices=category, blank=True, null=True)
     address = models.CharField(max_length=255, blank=True, null=True)
+    country = models.CharField(max_length=10, choices=country, blank=True, null=True)
 
     def __str__(self):
-        return 'Site : {} - {} with Category type : '.format(self.site, self.country, self.category)
+        return '{} - {} with Category type :{} Modify by : {}'.format(self.site, self.country, self.category, self.last_user_modify)
 
 
 class Contract(TimespamtedModel):
