@@ -1,0 +1,14 @@
+{% extends 'layouts/base.html' %}
+
+{% block title %}IFApp - IFin{% endblock %}
+{% block content %}
+
+<div>
+    <form class="container" method="POST">
+            {{ form.as_p }}
+            {% csrf_token %}
+        <input type="submit" class='btn btn-primary' value="submit">
+    </form>
+</div>
+
+{% endblock %}1
