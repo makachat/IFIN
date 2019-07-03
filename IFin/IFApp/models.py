@@ -19,6 +19,9 @@ class Supplier(TimespamtedModel):
     def __str__(self):
         return '{} - {}'.format(self.name, self.description)
 
+    class Meta:
+        ordering = ('name',)
+
 
 class Glaccount(TimespamtedModel):
         glaccount = models.DecimalField(max_digits=8, decimal_places=0)
@@ -26,6 +29,9 @@ class Glaccount(TimespamtedModel):
 
         def __str__(self):
             return 'GL Account : {}-{}'.format(self.glaccount, self.description)
+
+        class Meta:
+            ordering = ('glaccount',)
 
 
 class Site(TimespamtedModel):
@@ -48,6 +54,9 @@ class Site(TimespamtedModel):
 
     def __str__(self):
         return '{} - {} with Category type :{} Modify by : {}'.format(self.site, self.country, self.category, self.last_user_modify)
+
+    class Meta:
+        ordering = ('site',)
 
 
 class Contract(TimespamtedModel):
@@ -83,6 +92,8 @@ class Contract(TimespamtedModel):
     def __str__(self):
         return 'Contract : {} - {} : '.format(self.supplier, self.reference, self.description)
 
+    class Meta:
+        ordering = ('supplier',)
 
 
 
